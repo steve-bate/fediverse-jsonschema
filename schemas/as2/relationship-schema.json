@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:as2/relationship",
+  "$ref": "schema:as2/object-base",
+  "title": "Relationship",
+  "description": "Describes a relationship between two individuals. The subject and object properties are used to identify the connected individuals. See 5.2 Representing Relationships Between Entities for additional information.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "oneOf": [
+        {
+          "const": "Relationship"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Relationship"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "object": {
+      "oneOf": [
+        {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "schema:as2/link-base"
+            },
+            {
+              "$ref": "schema:as2/object-base"
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "$ref": "schema:as2/link-base"
+              },
+              {
+                "$ref": "schema:as2/object-base"
+              }
+            ]
+          }
+        }
+      ],
+      "description": "When used within an Activity, describes the direct object of the activity. For instance, in the activity \"John added a movie to his wishlist\", the object of the activity is the movie added. When used within a Relationship describes the entity to which the subject is related."
+    },
+    "subject": {
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "uri"
+        },
+        {
+          "$ref": "schema:as2/link-base"
+        },
+        {
+          "$ref": "schema:as2/object-base"
+        }
+      ],
+      "description": "On a Relationship object, the subject property identifies one of the connected individuals. For instance, for a Relationship object describing \"John is related to Sally\", subject would refer to John."
+    },
+    "relationship": {
+      "oneOf": [
+        {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "schema:as2/object-base"
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "$ref": "schema:as2/object-base"
+              }
+            ]
+          }
+        }
+      ],
+      "description": "On a Relationship object, the relationship property identifies the kind of relationship that exists between subject and object."
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

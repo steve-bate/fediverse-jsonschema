@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:as2/reject-base",
+  "$ref": "schema:as2/activity-base",
+  "title": "Reject-base",
+  "description": "Indicates that the actor is rejecting the object. The target and origin typically have no defined meaning.",
+  "type": "object"
+}

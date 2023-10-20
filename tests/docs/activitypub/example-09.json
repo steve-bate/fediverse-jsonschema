@@ -1,0 +1,21 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/activitystreams",
+    {
+      "@language": "ja"
+    }
+  ],
+  "type": "Person",
+  "id": "https://kenzoishii.example.com/",
+  "following": "https://kenzoishii.example.com/following.json",
+  "followers": "https://kenzoishii.example.com/followers.json",
+  "liked": "https://kenzoishii.example.com/liked.json",
+  "inbox": "https://kenzoishii.example.com/inbox.json",
+  "outbox": "https://kenzoishii.example.com/feed.json",
+  "preferredUsername": "kenzoishii",
+  "name": "\u77f3\u4e95\u5065\u8535",
+  "summary": "\u3053\u306e\u65b9\u306f\u305f\u3060\u306e\u4f8b\u3067\u3059",
+  "icon": [
+    "https://kenzoishii.example.com/image/165987aklre4"
+  ]
+}

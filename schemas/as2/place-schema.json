@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:as2/place",
+  "$ref": "schema:as2/object-base",
+  "title": "Place",
+  "description": "Represents a logical or physical location. See 5.3 Representing Places for additional information.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "oneOf": [
+        {
+          "const": "Place"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Place"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "accuracy": {
+      "type": "number",
+      "description": "Indicates the accuracy of position coordinates on a Place objects. Expressed in properties of percentage. e.g. \"94.0\" means \"94.0% accurate\"."
+    },
+    "latitude": {
+      "type": "number",
+      "description": "The latitude of a place"
+    },
+    "longitude": {
+      "type": "number",
+      "description": "The longitude of a place"
+    },
+    "radius": {
+      "type": "number",
+      "description": "The radius from the given latitude and longitude for a Place. The units is expressed by the units property. If units is not specified, the default is assumed to be \"m\" indicating \"meters\"."
+    },
+    "units": {
+      "description": "Specifies the measurement units for the radius and altitude properties on a Place object. If not specified, the default is assumed to be \"m\" for \"meters\".",
+      "anyOf": [
+        {
+          "const": "cm"
+        },
+        {
+          "const": "feet"
+        },
+        {
+          "const": "inches"
+        },
+        {
+          "const": "km"
+        },
+        {
+          "const": "m"
+        },
+        {
+          "const": "miles"
+        },
+        {
+          "type": "string",
+          "format": "uri-reference"
+        }
+      ]
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:as2/ignore-base",
+  "$ref": "schema:as2/activity-base",
+  "title": "Ignore-base",
+  "description": "Indicates that the actor is ignoring the object. The target and origin typically have no defined meaning.",
+  "type": "object"
+}

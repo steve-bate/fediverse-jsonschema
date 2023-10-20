@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:as2/offer-base",
+  "$ref": "schema:as2/activity-base",
+  "title": "Offer-base",
+  "description": "Indicates that the actor is offering the object. If specified, the target indicates the entity to which the object is being offered.",
+  "type": "object"
+}

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:as2/activitystreams2",
+  "oneOf": [
+    {
+      "$ref": "schema:as2/accept"
+    },
+    {
+      "$ref": "schema:as2/activity"
+    },
+    {
+      "$ref": "schema:as2/collection"
+    },
+    {
+      "$ref": "schema:as2/collectionpage"
+    },
+    {
+      "$ref": "schema:as2/document"
+    },
+    {
+      "$ref": "schema:as2/ignore"
+    },
+    {
+      "$ref": "schema:as2/intransitiveactivity"
+    },
+    {
+      "$ref": "schema:as2/link"
+    },
+    {
+      "$ref": "schema:as2/object"
+    },
+    {
+      "$ref": "schema:as2/offer"
+    },
+    {
+      "$ref": "schema:as2/orderedcollection"
+    },
+    {
+      "$ref": "schema:as2/orderedcollectionpage"
+    },
+    {
+      "$ref": "schema:as2/place"
+    },
+    {
+      "$ref": "schema:as2/profile"
+    },
+    {
+      "$ref": "schema:as2/question"
+    },
+    {
+      "$ref": "schema:as2/reject"
+    },
+    {
+      "$ref": "schema:as2/relationship"
+    },
+    {
+      "$ref": "schema:as2/tombstone"
+    },
+    {
+      "$ref": "schema:as2/untyped"
+    },
+    {
+      "$ref": "schema:as2/extonly"
+    }
+  ]
+}

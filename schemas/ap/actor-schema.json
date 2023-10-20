@@ -1,0 +1,129 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "schema:as2/document",
+    "$ref": "schema:as2/document-base",
+    "title": "Document",
+    "type": "object",
+    "properties": {
+        "type": {
+            "oneOf": [
+                {
+                    "$ref": "#/$defs/types"
+                },
+                {
+                    "type": "array",
+                    "contains": {
+                        "$ref": "#/$defs/types"
+                    }
+                }
+            ]
+        },
+        "inbox": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "format": "uri"
+                },
+                {
+                    "$ref": "schema:as2/orderedcollection"
+                }
+            ]
+        },
+        "outbox": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "format": "uri"
+                },
+                {
+                    "$ref": "schema:as2/orderedcollection"
+                }
+            ]
+        },
+        "following": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "format": "uri"
+                },
+                {
+                    "$ref": "schema:as2/orderedcollection"
+                },
+                {
+                    "$ref": "schema:as2/collection"
+                }
+            ]
+        },
+        "followers": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "format": "uri"
+                },
+                {
+                    "$ref": "schema:as2/orderedcollection"
+                },
+                {
+                    "$ref": "schema:as2/collection"
+                }
+            ]
+        },
+        "liked": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "format": "uri"
+                },
+                {
+                    "$ref": "schema:as2/orderedcollection"
+                },
+                {
+                    "$ref": "schema:as2/collection"
+                }
+            ]
+        },
+        "streams": {
+            "oneOf": [
+                {
+                    "type": "string",
+                    "format": "uri"
+                },
+                {
+                    "$ref": "schema:as2/activitystreams"
+                }
+            ]
+        },
+        "preferredUsername": {
+            "type": "string"
+        },
+        "endpoints": {
+            "$ref": "schema:ap/endpoints"
+        }
+    },
+    "$defs": {
+        "types": {
+            "anyOf": [
+                {
+                    "const": "Person"
+                },
+                {
+                    "const": "Application"
+                },
+                {
+                    "const": "Service"
+                },
+                {
+                    "const": "Organization"
+                },
+                {
+                    "const": "Group"
+                }
+            ]
+        }
+    },
+    "required": [
+        "type",
+        "inbox",
+        "outbox"
+    ]
+}

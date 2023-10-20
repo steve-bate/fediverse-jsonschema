@@ -1,0 +1,175 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:as2/question",
+  "$ref": "schema:as2/intransitiveactivity-base",
+  "title": "Question",
+  "description": "Represents a question being asked. Question objects are an extension of IntransitiveActivity. That is, the Question object is an Activity, but the direct object is the question itself and therefore it would not contain an object property. Either of the anyOf and oneOf properties MAY be used to express possible answers, but a Question object MUST NOT have both properties.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "oneOf": [
+        {
+          "const": "Question"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Question"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "oneOf": {
+      "oneOf": [
+        {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "schema:as2/link-base"
+            },
+            {
+              "$ref": "schema:as2/object-base"
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "$ref": "schema:as2/link-base"
+              },
+              {
+                "$ref": "schema:as2/object-base"
+              }
+            ]
+          }
+        }
+      ],
+      "description": "Identifies an exclusive option for a Question. Use of oneOf implies that the Question can have only a single answer. To indicate that a Question can have multiple answers, use anyOf."
+    },
+    "anyOf": {
+      "oneOf": [
+        {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "schema:as2/link-base"
+            },
+            {
+              "$ref": "schema:as2/object-base"
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "$ref": "schema:as2/link-base"
+              },
+              {
+                "$ref": "schema:as2/object-base"
+              }
+            ]
+          }
+        }
+      ],
+      "description": "Identifies an inclusive option for a Question. Use of anyOf implies that the Question can have multiple answers. To indicate that a Question can have only one answer, use oneOf."
+    },
+    "closed": {
+      "oneOf": [
+        {
+          "oneOf": [
+            {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "schema:as2/object-base"
+                }
+              ]
+            },
+            {
+              "oneOf": [
+                {
+                  "type": "string",
+                  "format": "uri"
+                },
+                {
+                  "$ref": "schema:as2/link-base"
+                }
+              ]
+            },
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "boolean"
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "$ref": "schema:as2/object-base"
+                  }
+                ]
+              },
+              {
+                "oneOf": [
+                  {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  {
+                    "$ref": "schema:as2/link-base"
+                  }
+                ]
+              },
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "boolean"
+              }
+            ]
+          }
+        }
+      ],
+      "description": "Indicates that a question has been closed, and answers are no longer accepted."
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

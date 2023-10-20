@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:as2/extonly",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "pattern": ".*:.*",
+      "description": "Hacky... but this is a strange use case."
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

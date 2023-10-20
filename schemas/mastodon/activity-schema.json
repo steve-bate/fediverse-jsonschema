@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:mastodon/activity",
+  "$ref": "schema:as2/activity-base",
+  "title": "Activity",
+  "type": "object",
+  "properties": {
+    "type": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/types"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "$ref": "#/$defs/types"
+          },
+          "maxContains": 1
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "types": {
+      "anyOf": [
+        {
+          "const": "Accept"
+        },
+        {
+          "const": "Announce"
+        },
+        {
+          "const": "Block"
+        },
+        {
+          "const": "Create"
+        },
+        {
+          "const": "Delete"
+        },
+        {
+          "const": "Flag"
+        },
+        {
+          "const": "Follow"
+        },
+        {
+          "const": "Like"
+        },
+        {
+          "const": "Listen"
+        },
+        {
+          "const": "Move"
+        },
+        {
+          "const": "Reject"
+        },
+        {
+          "const": "Undo"
+        },
+        {
+          "const": "Update"
+        }
+      ]
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

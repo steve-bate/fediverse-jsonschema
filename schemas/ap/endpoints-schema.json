@@ -1,0 +1,38 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "schema:as2/endpoints",
+    "title": "Endpoints",
+    "type": "object",
+    "properties": {
+        "proxyUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "Endpoint URI so this actor's clients may access remote ActivityStreams objects which require authentication to access. To use this endpoint, the client posts an x-www-form-urlencoded id parameter with the value being the id of the requested ActivityStreams object."
+        },
+        "oauthAuthorizationEndpoint": {
+            "type": "string",
+            "format": "uri",
+            "description": "If OAuth 2.0 bearer tokens [RFC6749] [RFC6750] are being used for authenticating client to server interactions, this endpoint specifies a URI at which a browser-authenticated user may obtain a new authorization grant."
+        },
+        "oauthTokenEndpoint": {
+            "type": "string",
+            "format": "uri",
+            "description": "If OAuth 2.0 bearer tokens [RFC6749] [RFC6750] are being used for authenticating client to server interactions, this endpoint specifies a URI at which a client may acquire an access token."
+        },
+        "provideClientKey": {
+            "type": "string",
+            "format": "uri",
+            "description": "If Linked Data Signatures and HTTP Signatures are being used for authentication and authorization, this endpoint specifies a URI at which browser-authenticated users may authorize a client's public key for client to server interactions."
+        },
+        "signClientKey": {
+            "type": "string",
+            "format": "uri",
+            "description": "If Linked Data Signatures and HTTP Signatures are being used for authentication and authorization, this endpoint specifies a URI at which a client key may be signed by the actor's key for a time window to act on behalf of the actor in interacting with foreign servers."
+        },
+        "sharedInbox": {
+            "type": "string",
+            "format": "uri",
+            "description": "An optional endpoint used for wide delivery of publicly addressed activities and activities sent to followers. sharedInbox endpoints SHOULD also be publicly readable OrderedCollection objects containing objects addressed to the Public special collection. Reading from the sharedInbox endpoint MUST NOT present objects which are not addressed to the Public endpoint."
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:as2/orderedcollectionpage",
+  "allOf": [
+    {
+      "$ref": "schema:as2/orderedcollection-base"
+    },
+    {
+      "$ref": "schema:as2/collectionpage-base"
+    }
+  ],
+  "title": "OrderedCollectionPage",
+  "description": "Used to represent ordered subsets of items from an OrderedCollection. Refer to the Activity Streams 2.0 Core for a complete description of the OrderedCollectionPage object.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "oneOf": [
+        {
+          "const": "OrderedCollectionPage"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "OrderedCollectionPage"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "startIndex": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "A non-negative integer value identifying the relative position within the logical view of a strictly ordered collection."
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

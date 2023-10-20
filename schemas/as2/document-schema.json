@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:as2/document",
+  "$ref": "schema:as2/document-base",
+  "title": "Document",
+  "type": "object",
+  "properties": {
+    "type": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/types"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "$ref": "#/$defs/types"
+          }
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "types": {
+      "anyOf": [
+        {
+          "const": "Document"
+        },
+        {
+          "const": "Audio"
+        },
+        {
+          "const": "Image"
+        },
+        {
+          "const": "Page"
+        },
+        {
+          "const": "Video"
+        }
+      ]
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

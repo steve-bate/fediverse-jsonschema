@@ -1,0 +1,14 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/activitystreams",
+    {
+      "suspended": "http://joinmastodon.org/ns#suspended"
+    }
+  ],
+  "id": "https://example.com/@eve",
+  "type": "Person",
+  "suspended": true,
+  "#comment": "Adding inbox/outbox so document is valid",
+  "inbox": "https://server.example/inbox",
+  "outbox": "https://server.example/outbox"
+}

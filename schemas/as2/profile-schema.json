@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:as2/profile",
+  "$ref": "schema:as2/object-base",
+  "title": "Profile",
+  "description": "A Profile is a content object that describes another Object, typically used to describe Actor Type objects. The describes property is used to reference the object being described by the profile.",
+  "type": "object",
+  "properties": {
+    "type": {
+      "oneOf": [
+        {
+          "const": "Profile"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "const": "Profile"
+          },
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "describes": {
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "uri"
+        },
+        {
+          "$ref": "schema:as2/object-base"
+        }
+      ],
+      "description": "On a Profile object, the describes property identifies the object described by the Profile."
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

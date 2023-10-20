@@ -1,0 +1,27 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/activitystreams",
+    {
+      "schema": "http://schema.org#",
+      "PropertyValue": "schema:PropertyValue",
+      "value": "schema:value"
+    }
+  ],
+  "id": "https://mastodon.social/users/Gargron",
+  "type": "Person",
+  "attachment": [
+    {
+      "type": "PropertyValue",
+      "name": "Patreon",
+      "value": "<a href=\"https://www.patreon.com/mastodon\" rel=\"me nofollow noopener noreferrer\" target=\"_blank\"><span class=\"invisible\">https://www.</span><span class=\"\">patreon.com/mastodon</span><span class=\"invisible\"></span}"
+    },
+    {
+      "type": "PropertyValue",
+      "name": "Homepage",
+      "value": "<a href=\"https://zeonfederated.com\" rel=\"me nofollow noopener noreferrer\" target=\"_blank\"><span class=\"invisible\">https://</span><span class=\"\">zeonfederated.com</span><span class=\"invisible\"></span}"
+    }
+  ],
+  "#comment": "Adding inbox/outbox so document is valid",
+  "inbox": "https://server.example/inbox",
+  "outbox": "https://server.example/outbox"
+}

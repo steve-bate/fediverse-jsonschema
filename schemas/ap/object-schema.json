@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:as2/object",
+  "$ref": "schema:as2/object-base",
+  "title": "Object",
+  "type": "object",
+  "properties": {
+    "type": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/types"
+        },
+        {
+          "type": "array",
+          "contains": {
+            "$ref": "#/$defs/types"
+          }
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "types": {
+      "anyOf": [
+        {
+          "const": "Object"
+        },
+        {
+          "const": "Application"
+        },
+        {
+          "const": "Article"
+        },
+        {
+          "const": "Event"
+        },
+        {
+          "const": "Note"
+        }
+      ]
+    }
+  },
+  "required": [
+    "type"
+  ]
+}

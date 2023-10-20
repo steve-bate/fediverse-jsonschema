@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:as2/untyped",
+  "$ref": "schema:as2/object-base",
+  "type": "object",
+  "properties": {
+    "type": false
+  }
+}

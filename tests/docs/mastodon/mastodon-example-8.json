@@ -1,0 +1,17 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/activitystreams",
+    {
+      "featured": {
+        "@id": "http://joinmastodon.org/ns#featured",
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://example.com/@alice",
+  "type": "Person",
+  "featured": "https://example.com/@alice/collections/featured",
+  "#comment": "Adding inbox/outbox so document is valid",
+  "inbox": "https://server.example/inbox",
+  "outbox": "https://server.example/outbox"
+}

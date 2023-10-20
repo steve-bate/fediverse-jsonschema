@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:as2/document-base",
+  "$ref": "schema:as2/object-base",
+  "title": "Document-base",
+  "description": "Represents a document of any kind.",
+  "type": "object"
+}

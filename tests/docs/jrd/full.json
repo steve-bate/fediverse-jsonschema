@@ -1,0 +1,26 @@
+{
+    "subject": "acct:Gargron@mastodon.social",
+    "aliases": [
+        "https://mastodon.social/@Gargron",
+        "https://mastodon.social/users/Gargron"
+    ],
+    "links": [
+        {
+            "rel": "http://webfinger.net/rel/profile-page",
+            "type": "text/html",
+            "href": "https://mastodon.social/@Gargron",
+            "properties": {
+                "http://server.example/p1": "foo",
+                "http://server.example/p2": null
+            },
+            "titles": {
+                "en": "Hello",
+                "fr": "Bonjour"
+            }
+        }
+    ],
+    "properties": {
+        "http://server.example/p1": "foo",
+        "http://server.example/p2": null
+    }
+}

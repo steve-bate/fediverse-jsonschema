@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:as2/collection-base",
+  "$ref": "schema:as2/object-base",
+  "title": "Collection-base",
+  "description": "A Collection is a subtype of Object that represents ordered or unordered sets of Object or Link instances. Refer to the Activity Streams 2.0 Core specification for a complete description of the Collection type.",
+  "type": "object",
+  "properties": {
+    "current": {
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "uri"
+        },
+        {
+          "$ref": "schema:as2/link-base"
+        },
+        {
+          "$ref": "schema:as2/collectionpage-base"
+        }
+      ],
+      "description": "In a paged Collection, indicates the page that contains the most recently updated member items."
+    },
+    "first": {
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "uri"
+        },
+        {
+          "$ref": "schema:as2/link-base"
+        },
+        {
+          "$ref": "schema:as2/collectionpage-base"
+        }
+      ],
+      "description": "In a paged Collection, indicates the furthest preceeding page of items in the collection."
+    },
+    "last": {
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "uri"
+        },
+        {
+          "$ref": "schema:as2/link-base"
+        },
+        {
+          "$ref": "schema:as2/collectionpage-base"
+        }
+      ],
+      "description": "In a paged Collection, indicates the furthest proceeding page of the collection."
+    },
+    "items": {
+      "oneOf": [
+        {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uri"
+            },
+            {
+              "$ref": "schema:as2/link-base"
+            },
+            {
+              "$ref": "schema:as2/object-base"
+            }
+          ]
+        },
+        {
+          "type": "array",
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "format": "uri"
+              },
+              {
+                "$ref": "schema:as2/link-base"
+              },
+              {
+                "$ref": "schema:as2/object-base"
+              }
+            ]
+          }
+        }
+      ],
+      "description": "Identifies the items contained in a collection. The items might be ordered or unordered."
+    },
+    "totalItems": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "A non-negative integer specifying the total number of objects contained by the logical view of the collection. This number might not reflect the actual number of items serialized within the Collection object instance."
+    }
+  }
+}
