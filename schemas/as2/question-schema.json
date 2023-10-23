@@ -23,75 +23,11 @@
       ]
     },
     "oneOf": {
-      "oneOf": [
-        {
-          "oneOf": [
-            {
-              "type": "string",
-              "format": "uri"
-            },
-            {
-              "$ref": "schema:as2/link-base"
-            },
-            {
-              "$ref": "schema:as2/object-base"
-            }
-          ]
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "type": "string",
-                "format": "uri"
-              },
-              {
-                "$ref": "schema:as2/link-base"
-              },
-              {
-                "$ref": "schema:as2/object-base"
-              }
-            ]
-          }
-        }
-      ],
+      "$ref": "schema:as2/object-base#/$defs/ObjectOrLinkOrArray",
       "description": "Identifies an exclusive option for a Question. Use of oneOf implies that the Question can have only a single answer. To indicate that a Question can have multiple answers, use anyOf."
     },
     "anyOf": {
-      "oneOf": [
-        {
-          "oneOf": [
-            {
-              "type": "string",
-              "format": "uri"
-            },
-            {
-              "$ref": "schema:as2/link-base"
-            },
-            {
-              "$ref": "schema:as2/object-base"
-            }
-          ]
-        },
-        {
-          "type": "array",
-          "items": {
-            "oneOf": [
-              {
-                "type": "string",
-                "format": "uri"
-              },
-              {
-                "$ref": "schema:as2/link-base"
-              },
-              {
-                "$ref": "schema:as2/object-base"
-              }
-            ]
-          }
-        }
-      ],
+      "$ref": "schema:as2/object-base#/$defs/ObjectOrLinkOrArray",
       "description": "Identifies an inclusive option for a Question. Use of anyOf implies that the Question can have multiple answers. To indicate that a Question can have only one answer, use oneOf."
     },
     "closed": {
