@@ -11,6 +11,7 @@ bs4 = "^0.0.1"
 pytest = "^7.4.2"
 jsonschema = { version = "^4.19.1", extras = ["format"] }
 pre-commit = "^3.5.0"
+pyld = "^2.0.3"
 
 [tool.isort]
 profile = "black"
