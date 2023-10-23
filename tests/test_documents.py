@@ -3,9 +3,21 @@ import json
 from pathlib import Path
 
 import pytest
+from jsonschema.exceptions import ValidationError
 from jsonschema.protocols import Validator
 
 from fediverse_jsonschema.validation import make_validator
+
+
+def _get_root_errors(errors: list[ValidationError]):
+    messages = set()
+    for error in errors:
+        if not error.context:
+            messages.add(error.message)
+        else:
+            for m in _get_root_errors(error.context):
+                messages.add(m)
+    return messages
 
 
 def _test_document(docpath: Path, validator: Validator):
@@ -25,6 +37,9 @@ def _test_document(docpath: Path, validator: Validator):
                             return  # passes test
                 raise AssertionError(f"Didn't find failure message: {failure_message}")
         else:
+            if len(errors) > 0:
+                for message in sorted(_get_root_errors(errors)):
+                    print(f"VALIDATION ERROR: {message}")
             assert len(errors) == 0, "Unexpected failure"
 
 
@@ -80,3 +95,15 @@ def jrd_validator(schema_dir):
 @pytest.mark.parametrize("docpath", _test_docs("jrd"), ids=_test_id)
 def test_jrd_docs(docpath, jrd_validator: Validator):
     _test_document(docpath, jrd_validator)
+
+
+@pytest.fixture(scope="session")
+def etc_validator(schema_dir):
+    return make_validator(schema_dir, "schema:jrd")
+
+
+@pytest.mark.parametrize(
+    "docpath", _test_docs("etc/pleroma_test_data/activitypub"), ids=_test_id
+)
+def test_etc_pleroma_ap(docpath, ap_validator: Validator):
+    _test_document(docpath, ap_validator)
