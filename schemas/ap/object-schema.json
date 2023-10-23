@@ -26,9 +26,6 @@
           "const": "Object"
         },
         {
-          "const": "Application"
-        },
-        {
           "const": "Article"
         },
         {

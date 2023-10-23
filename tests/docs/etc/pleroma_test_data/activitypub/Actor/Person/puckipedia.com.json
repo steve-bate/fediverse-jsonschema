@@ -29,5 +29,6 @@
   },
   "summary": "<p>federated hacker teen<br/>\n[<a href=\"https://pronoun.is/she\">she</a>/<a href=\"https://pronoun.is/they\">they</a>]</p>",
   "type": "Person",
-  "updated": "2017-12-19T16:56:29.7576707+00:00"
+  "updated": "2017-12-19T16:56:29.7576707+00:00",
+  "#failure_message": "'https://puckipedia.com/#endpoints' is not of type 'object'"
 }

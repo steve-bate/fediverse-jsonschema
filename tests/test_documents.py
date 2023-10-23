@@ -6,7 +6,7 @@ import pytest
 from jsonschema.exceptions import ValidationError
 from jsonschema.protocols import Validator
 
-from fediverse_jsonschema.validation import make_validator
+from fediverse_jsonschema.validation import make_validator, preprocess_instance
 
 
 def _get_root_errors(errors: list[ValidationError]):
@@ -22,20 +22,16 @@ def _get_root_errors(errors: list[ValidationError]):
 
 def _test_document(docpath: Path, validator: Validator):
     with open(docpath) as fp:
-        instance = json.load(fp)
+        instance = preprocess_instance(json.load(fp))
         errors = list(validator.iter_errors(instance))
-        expected_failure = "invalid" in str(docpath)
-        if len(errors) > 1:
-            print(errors)
-        if expected_failure:
+        if "#failure_message" in instance:
             assert len(errors) > 0, "Expected a failure"
-            if "#failure_message" in instance:
-                failure_message = instance["#failure_message"]
-                for error in errors:
-                    for ctx_error in error.context:
-                        if failure_message in ctx_error.message:
-                            return  # passes test
-                raise AssertionError(f"Didn't find failure message: {failure_message}")
+            failure_message = instance["#failure_message"]
+            for error in errors:
+                for ctx_error in error.context:
+                    if failure_message in ctx_error.message:
+                        return  # passes test
+            raise AssertionError(f"Didn't find failure message: {failure_message}")
         else:
             if len(errors) > 0:
                 for message in sorted(_get_root_errors(errors)):

@@ -12,7 +12,7 @@
   "cc": [
     "https://patch.cx/users/rin/followers"
   ],
-  "closed": "2019-09-19T00:32:36.785333",
+  "closed": "2019-09-19T00:32:36.785333Z",
   "content": "can you vote on this poll?",
   "context": "https://patch.cx/contexts/626ecafd-3377-46c4-b908-3721a4d4373c",
   "conversation": "https://patch.cx/contexts/626ecafd-3377-46c4-b908-3721a4d4373c",
@@ -21,7 +21,7 @@
     {
       "name": "yes",
       "replies": {
-        "totalItems": 4,
+        "totalItems": 8,
         "type": "Collection"
       },
       "type": "Note"
@@ -29,7 +29,7 @@
     {
       "name": "no",
       "replies": {
-        "totalItems": 0,
+        "totalItems": 3,
         "type": "Collection"
       },
       "type": "Note"

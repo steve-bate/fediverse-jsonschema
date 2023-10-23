@@ -28,3 +28,20 @@ def make_validator(schema_dir: str, schema_uri: str):
         registry=Registry(retrieve=resolver.resolve),
         format_checker=Draft202012Validator.FORMAT_CHECKER,
     )
+
+
+def _remove_nulls(instance):
+    for key, value in list(instance.items()):
+        if value is None:
+            instance.pop(key)
+        elif isinstance(value, dict):
+            _remove_nulls(value)
+        elif isinstance(value, list):
+            for item in value:
+                if isinstance(item, dict):
+                    _remove_nulls(item)
+
+
+def preprocess_instance(instance):
+    _remove_nulls(instance)
+    return instance

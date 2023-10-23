@@ -23,5 +23,6 @@
   "@context": "https://www.w3.org/ns/activitystreams",
   "id": "https://enterprise.lemmy.ml/u/nutomic",
   "type": "Person",
-  "name": "nutomic"
+  "name": "nutomic",
+  "#failure_message": "'outbox' is a required property"
 }
