@@ -1,7 +1,7 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "schema:as2/document",
-    "$ref": "schema:as2/document-base",
+    "$id": "schema:as2/actor",
+    "$ref": "schema:as2/object-base",
     "title": "Document",
     "type": "object",
     "properties": {
