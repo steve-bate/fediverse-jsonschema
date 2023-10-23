@@ -76,7 +76,7 @@ I'm starting to investigate how many of the Mastodon-specific constrains can be 
 
 These schema describe the JRD format used by Webfinger and the top-level link list for the nodeinfo protocol.
 
-## Resources
+## Related
 
 * [Activity Streams 2.0](https://www.w3.org/TR/activitystreams-core/)
 * [Activity Streams 2.0 Vocabulary](https://www.w3.org/TR/activitystreams-vocabulary/)
@@ -85,3 +85,4 @@ These schema describe the JRD format used by Webfinger and the top-level link li
 * [Mastodon ActivityPub](https://docs.joinmastodon.org/spec/activitypub/)
 * [Webfinger/JRD](https://www.rfc-editor.org/rfc/rfc7033)
 * [Nodeinfo](https://github.com/jhass/nodeinfo/blob/main/PROTOCOL.md)
+* [JSON Schema](https://json-schema.org/)
