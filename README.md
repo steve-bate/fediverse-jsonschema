@@ -47,10 +47,15 @@ pytest
 
 The schemas are stored in the `schemas` directory. I use subdirectories to manage the complex schemas.
 
+The test documents are are in the `tests\docs` directory.
+
 Rather than one large file, the schemas are currently separated into files that generally correspond to a "type" in the related protocol. In the future, I may consider writing a script to combine the files into one schema file.
 
 The schema ids are in the form `schema:<path>` and, in Python, I use a resolver to map the schema id to the directory and file containing the schema.
 
+Note that JSON-LD data is preprocessed to remove any object keys with `null` values. These are noise since they ignored in a JSON-LD data model and handling them in the schema makes it much more complex.
+
+The JSON-LD documents are also tested to be sure they can be expanded using the standard JSON-LD expansion algorithms. There is no check that the results make sense from an ActivityPub perspective.
 
 ### Activity Streams 2.0 (AS2) Schema
 
