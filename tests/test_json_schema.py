@@ -39,9 +39,9 @@ def _test_document(docpath: Path, validator: Validator):
             assert len(errors) == 0, "Unexpected failure"
 
 
-def _test_docs(group_dir: str):
+def _test_docs(group_glob: str):
     proj_path = Path(__file__).parent
-    docs_path = str(proj_path / "docs" / group_dir / "**" / "*.json")
+    docs_path = str(proj_path / "docs" / group_glob / "**" / "*.json")
     return (
         f
         for f in glob.glob(docs_path, recursive=True)
@@ -58,8 +58,8 @@ def as2_validator(schema_dir):
     return make_validator(schema_dir, "schema:as2/activitystreams2")
 
 
-@pytest.mark.parametrize("docpath", _test_docs("activitystreams2"), ids=_test_id)
-def test_w3c_as2_docs(docpath, as2_validator: Validator):
+@pytest.mark.parametrize("docpath", _test_docs("activitystreams2*"), ids=_test_id)
+def test_activitystreams2_docs(docpath, as2_validator: Validator):
     _test_document(docpath, as2_validator)
 
 

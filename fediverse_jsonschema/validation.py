@@ -21,12 +21,12 @@ class SchemaResolver:
         return Resource.from_contents(contents)
 
 
-def make_validator(schema_dir: str, schema_uri: str):
+def make_validator(schema_dir: str, schema_uri: str, check_format: bool = True):
     resolver = SchemaResolver(schema_dir)
     return Draft202012Validator(
         resolver.resolve(schema_uri).contents,
         registry=Registry(retrieve=resolver.resolve),
-        format_checker=Draft202012Validator.FORMAT_CHECKER,
+        format_checker=Draft202012Validator.FORMAT_CHECKER if check_format else None,
     )
 
 
