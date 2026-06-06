@@ -154,17 +154,17 @@
     },
     "endTime": {
       "type": "string",
-      "format": "date-time",
+      "format": "#/$defs/as2-date-time",
       "description": "The date and time describing the actual or expected ending time of the object. When used with an Activity object, for instance, the endTime property specifies the moment the activity concluded or is expected to conclude."
     },
     "published": {
       "type": "string",
-      "format": "date-time",
+      "format": "#/$defs/as2-date-time",
       "description": "The date and time at which the object was published"
     },
     "startTime": {
       "type": "string",
-      "format": "date-time",
+      "format": "#/$defs/as2-date-time",
       "description": "The date and time describing the actual or expected starting time of the object. When used with an Activity object, for instance, the startTime property specifies the moment the activity began or is scheduled to begin."
     },
     "summary": {
@@ -172,13 +172,16 @@
       "description": "A natural language summarization of the object encoded as HTML. Multiple language tagged summaries MAY be provided."
     },
     "updated": {
-      "type": "string",
-      "format": "date-time",
+      "$ref": "#/$defs/as2-date-time",
       "description": "The date and time at which the object was updated"
     },
     "href": false
   },
   "$defs": {
+    "as2-date-time": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}(:\\d{2}(\\.\\d+)?)?(Z|[+-]\\d{2}:\\d{2})$"
+    },
     "stringOrArray": {
       "oneOf": [
         {
