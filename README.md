@@ -22,23 +22,16 @@ If you forget to use the extra option, you can initialize the modules with:
 ## Running Tests
 
 
-To run the tests, you'll need to use poetry to install the package.
+To run the tests, install dependencies with uv.
 
 ```
-poetry install
+uv sync --group dev
 ```
 
 and then run the pytest tests:
 
 ```bash
-poetry run pytest
-```
-
-or
-
-```bash
-poetry shell
-pytest
+uv run pytest
 ```
 
 ## Schemas

@@ -1,21 +1,28 @@
-[tool.poetry]
+[project]
 name = "fediverse-jsonschema"
 version = "0.1.0"
 description = ""
-authors = ["Steve Bate <svc-github@stevebate.net>"]
 readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Steve Bate", email = "svc-github@stevebate.net" }]
+dependencies = [
+	"bs4>=0.0.1,<0.0.2",
+	"jsonschema[format]>=4.19.1,<5",
+	"pyld>=2.0.3,<3",
+]
 
-[tool.poetry.dependencies]
-python = "^3.11"
-bs4 = "^0.0.1"
-pytest = "^7.4.2"
-jsonschema = { version = "^4.19.1", extras = ["format"] }
-pre-commit = "^3.5.0"
-pyld = "^2.0.3"
+[dependency-groups]
+dev = [
+	"pre-commit>=3.5.0,<4",
+	"pytest>=7.4.2,<8",
+]
 
 [tool.isort]
 profile = "black"
 
+[tool.setuptools.packages.find]
+include = ["fediverse_jsonschema*"]
+
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
