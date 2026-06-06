@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "schema:as2/object",
+  "$id": "schema:mastodon/object",
   "$ref": "schema:as2/object-base",
   "title": "Object",
   "type": "object",
@@ -21,16 +21,15 @@
   },
   "$defs": {
     "types": {
-      "anyOf": [
-        {
-          "const": "Article"
-        },
-        {
-          "const": "Event"
-        },
-        {
-          "const": "Note"
-        }
+      "enum": [
+        "Note",
+        "_FIXME_Question",
+        "Article",
+        "Page",
+        "Image",
+        "Audio",
+        "Video",
+        "Event"
       ]
     }
   },

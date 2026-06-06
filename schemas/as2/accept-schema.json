@@ -21,14 +21,7 @@
   },
   "$defs": {
     "types": {
-      "anyOf": [
-        {
-          "const": "Accept"
-        },
-        {
-          "const": "TentativeAccept"
-        }
-      ]
+      "enum": ["Accept", "TentativeAccept"]
     }
   },
   "required": [

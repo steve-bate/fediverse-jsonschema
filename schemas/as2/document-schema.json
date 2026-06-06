@@ -21,22 +21,12 @@
   },
   "$defs": {
     "types": {
-      "anyOf": [
-        {
-          "const": "Document"
-        },
-        {
-          "const": "Audio"
-        },
-        {
-          "const": "Image"
-        },
-        {
-          "const": "Page"
-        },
-        {
-          "const": "Video"
-        }
+      "enum": [
+        "Document",
+        "Audio",
+        "Image",
+        "Page",
+        "Video"
       ]
     }
   },

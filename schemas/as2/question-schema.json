@@ -58,7 +58,7 @@
             },
             {
               "type": "string",
-              "format": "date-time"
+              "format": "#/object-base/$defs/as2-date-time"
             },
             {
               "type": "boolean"

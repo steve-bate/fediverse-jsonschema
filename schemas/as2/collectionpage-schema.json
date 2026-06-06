@@ -8,22 +8,13 @@
     "type": {
       "oneOf": [
         {
-          "$ref": "#/$defs/types"
+          "const": "CollectionPage"
         },
         {
           "type": "array",
           "contains": {
-            "$ref": "#/$defs/types"
+            "const": "CollectionPage"
           }
-        }
-      ]
-    }
-  },
-  "$defs": {
-    "types": {
-      "anyOf": [
-        {
-          "const": "CollectionPage"
         }
       ]
     }

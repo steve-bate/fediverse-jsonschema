@@ -21,34 +21,16 @@
   },
   "$defs": {
     "types": {
-      "anyOf": [
-        {
-          "const": "Object"
-        },
-        {
-          "const": "Application"
-        },
-        {
-          "const": "Article"
-        },
-        {
-          "const": "Event"
-        },
-        {
-          "const": "Group"
-        },
-        {
-          "const": "Note"
-        },
-        {
-          "const": "Organization"
-        },
-        {
-          "const": "Person"
-        },
-        {
-          "const": "Service"
-        }
+      "enum": [
+        "Object",
+        "Application",
+        "Article",
+        "Event",
+        "Group",
+        "Note",
+        "Organization",
+        "Person",
+        "Service"
       ]
     }
   },

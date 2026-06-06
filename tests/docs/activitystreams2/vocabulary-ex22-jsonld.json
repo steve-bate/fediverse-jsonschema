@@ -7,7 +7,7 @@
     "type": "Person",
     "name": "Sally"
   },
-  "relationship": "urn:IsContact",
+  "relationship": "IsContact",
   "object": {
     "type": "Person",
     "name": "John"

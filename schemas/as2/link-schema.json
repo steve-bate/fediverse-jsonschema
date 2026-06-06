@@ -21,13 +21,9 @@
   },
   "$defs": {
     "types": {
-      "anyOf": [
-        {
-          "const": "Link"
-        },
-        {
-          "const": "Mention"
-        }
+      "enum": [
+        "Link",
+        "Mention"
       ]
     }
   },

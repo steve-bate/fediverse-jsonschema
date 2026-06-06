@@ -8,22 +8,13 @@
     "type": {
       "oneOf": [
         {
-          "$ref": "#/$defs/types"
+          "const": "OrderedCollection"
         },
         {
           "type": "array",
           "contains": {
-            "$ref": "#/$defs/types"
+            "const": "OrderedCollection"
           }
-        }
-      ]
-    }
-  },
-  "$defs": {
-    "types": {
-      "anyOf": [
-        {
-          "const": "OrderedCollection"
         }
       ]
     }

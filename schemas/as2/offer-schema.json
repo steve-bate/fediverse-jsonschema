@@ -21,13 +21,9 @@
   },
   "$defs": {
     "types": {
-      "anyOf": [
-        {
-          "const": "Offer"
-        },
-        {
-          "const": "Invite"
-        }
+      "enum": [
+        "Offer",
+        "Invite"
       ]
     }
   },

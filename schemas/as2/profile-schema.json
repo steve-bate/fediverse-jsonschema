@@ -15,9 +15,6 @@
           "type": "array",
           "contains": {
             "const": "Profile"
-          },
-          "items": {
-            "type": "string"
           }
         }
       ]

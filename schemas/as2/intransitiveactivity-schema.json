@@ -21,17 +21,7 @@
   },
   "$defs": {
     "types": {
-      "anyOf": [
-        {
-          "const": "IntransitiveActivity"
-        },
-        {
-          "const": "Arrive"
-        },
-        {
-          "const": "Travel"
-        }
-      ]
+      "enum": ["IntransitiveActivity", "Arrive", "Travel"]
     }
   },
   "required": [
