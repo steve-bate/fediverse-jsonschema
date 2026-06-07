@@ -35,7 +35,7 @@ def _test_document(docpath: Path, validator: Validator):
         else:
             if len(errors) > 0:
                 for message in sorted(_get_root_errors(errors)):
-                    print(f"VALIDATION ERROR: {message}")
+                    print(f"VALIDATION DEBUG: {message}")
             assert len(errors) == 0, "Unexpected failure"
 
 

@@ -1,0 +1,15 @@
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id": "https://mastodon.example/users/alice#reject/follows/6789",
+  "type": "Reject",
+  "actor": "https://mastodon.example/users/alice",
+  "object": {
+    "id": "https://remote.example/users/bob#follows/6789",
+    "type": "Follow",
+    "actor": "https://remote.example/users/bob",
+    "object": "https://mastodon.example/users/alice"
+  },
+  "to": [
+    "https://remote.example/users/bob"
+  ]
+}

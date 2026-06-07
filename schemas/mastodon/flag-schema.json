@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:mastodon/block",
+  "$ref": "schema:mastodon/activity-base",
+  "title": "Mastodon Flag",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "Flag"
+    },
+    "content": {
+      "type": "string",
+      "maxLength": 1000
+    },
+    "object": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    }
+  }
+}

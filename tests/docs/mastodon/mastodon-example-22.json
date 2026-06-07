@@ -1,0 +1,16 @@
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id": "https://mastodon.example/users/bob/undo/like-abc123",
+  "type": "Undo",
+  "actor": "https://mastodon.example/users/bob",
+  "published": "2026-06-07T06:15:00Z",
+  "to": [
+    "https://mastodon.example/users/alice"
+  ],
+  "object": {
+    "id": "https://mastodon.example/users/bob/likes/abc123",
+    "type": "Like",
+    "actor": "https://mastodon.example/users/bob",
+    "object": "https://mastodon.example/users/alice/statuses/109876543210"
+  }
+}

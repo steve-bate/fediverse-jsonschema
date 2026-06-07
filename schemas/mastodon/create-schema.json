@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:mastodon/create",
+  "$ref": "schema:mastodon/activity-base",
+  "title": "Mastodon Create",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "Create"
+    },
+    "object": {
+      "$ref": "schema:mastodon/object"
+    },
+    "inReplyTo": {
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}

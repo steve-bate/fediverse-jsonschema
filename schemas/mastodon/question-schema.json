@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:mastodon/question",
+  "title": "Mastodon Question/Poll (object, not an activity)",
+  "allOf": [
+    {"$ref": "schema:as2/object-base"},
+    {"$ref": "schema:as2/question-base"}
+  ]
+}

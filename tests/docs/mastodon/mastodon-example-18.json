@@ -1,0 +1,18 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/activitystreams",
+    "https://w3id.org/security/v1"
+  ],
+  "id": "https://example.com/users/alice#accept-follows-bob-2024-01-01",
+  "type": "Accept",
+  "actor": "https://example.com/users/alice",
+  "object": {
+    "id": "https://remote.social/users/bob#follows-alice-2024-01-01",
+    "type": "Follow",
+    "actor": "https://remote.social/users/bob",
+    "object": "https://example.com/users/alice"
+  },
+  "to": [
+    "https://remote.social/users/bob"
+  ]
+}

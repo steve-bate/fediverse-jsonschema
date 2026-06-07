@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:mastodon/move",
+  "$ref": "schema:mastodon/activity-base",
+  "title": "Mastodon Move",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "Move"
+    },
+    "target": {
+      "type": "string",
+      "format": "uri"
+    }
+  },
+  "required": ["target"]
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:mastodon/like",
+  "$ref": "schema:mastodon/activity-base",
+  "title": "Mastodon Like",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "Like"
+    }
+  }
+}

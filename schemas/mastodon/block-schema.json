@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:mastodon/block",
+  "$ref": "schema:mastodon/activity-base",
+  "title": "Mastodon Block",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "Block"
+    }
+  }
+}

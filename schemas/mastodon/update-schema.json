@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:mastodon/update",
+  "$ref": "schema:mastodon/activity-base",
+  "title": "Mastodon Update (S2S/Full)",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "Update"
+    },
+    "object": {
+      "$ref": "schema:as2/object",
+      "required": ["id"]
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id": "https://mastodon.example/users/alice/statuses/109876543210#updates/1749276600",
+  "type": "Update",
+  "actor": "https://mastodon.example/users/alice",
+  "published": "2026-06-07T06:10:00Z",
+  "to": [
+    "https://www.w3.org/ns/activitystreams#Public"
+  ],
+  "cc": [
+    "https://mastodon.example/users/alice/followers"
+  ],
+  "object": {
+    "id": "https://mastodon.example/users/alice/statuses/109876543210",
+    "type": "Note",
+    "attributedTo": "https://mastodon.example/users/alice",
+    "content": "<p>Hello, edited world.</p>",
+    "published": "2026-06-07T06:00:00Z",
+    "updated": "2026-06-07T06:10:00Z",
+    "to": [
+      "https://www.w3.org/ns/activitystreams#Public"
+    ],
+    "cc": [
+      "https://mastodon.example/users/alice/followers"
+    ]
+  }
+}

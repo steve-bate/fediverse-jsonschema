@@ -1,0 +1,10 @@
+{
+  "@context": "https://www.w3.org/ns/activitystreams",
+  "id": "https://example.com/users/alice#delete/12345",
+  "type": "Delete",
+  "actor": "https://example.com/users/alice",
+  "object": "https://example.com/users/alice/statuses/12345",
+  "to": [
+    "https://www.w3.org/ns/activitystreams#Public"
+  ]
+}

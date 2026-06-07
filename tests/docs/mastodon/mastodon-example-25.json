@@ -1,0 +1,20 @@
+{
+  "@context": [
+    "https://www.w3.org/ns/activitystreams",
+    {
+      "toot": "http://joinmastodon.org/ns#",
+      "featured": {
+        "@id": "toot:featured",
+        "@type": "@id"
+      }
+    }
+  ],
+  "id": "https://mastodon.example/users/alice#add/featured/13579",
+  "type": "Add",
+  "actor": "https://mastodon.example/users/alice",
+  "object": "https://mastodon.example/users/alice/statuses/13579",
+  "target": "https://mastodon.example/users/alice/collections/featured",
+  "to": [
+    "https://www.w3.org/ns/activitystreams#Public"
+  ]
+}

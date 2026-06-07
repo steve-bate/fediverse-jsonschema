@@ -1,10 +1,13 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "schema:mastodon/mastodon",
-    "title": "ActivityPub",
+    "title": "Mastodon-Flavored ActivityPub",
     "oneOf": [
         {
             "$ref": "schema:mastodon/activity"
+        },
+        {
+            "$ref": "schema:mastodon/object"
         },
         {
             "$ref": "schema:ap/actor"
@@ -16,19 +19,10 @@
             "$ref": "schema:as2/collectionpage"
         },
         {
-            "$ref": "schema:mastodon/document"
-        },
-        {
-            "$ref": "schema:mastodon/object"
-        },
-        {
             "$ref": "schema:as2/orderedcollection"
         },
         {
             "$ref": "schema:as2/orderedcollectionpage"
-        },
-        {
-            "$ref": "schema:as2/question"
         }
     ]
 }

@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "schema:mastodon/undo",
+  "$ref": "schema:mastodon/activity-base",
+  "title": "Mastodon Undo",
+  "type": "object",
+  "properties": {
+    "type": {
+      "const": "Undo"
+    },
+    "object": {
+      "oneOf": [
+        {
+          "type": "string",
+          "format": "uri"
+        },
+        {
+          "allOf": [
+            {
+              "$ref": "schema:as2/activity-base"
+            },
+            {
+              "properties": {
+                "type": {
+                  "enum": ["Follow", "Like"]
+                }
+              },
+              "required": [
+                "type",
+                "actor",
+                "object"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

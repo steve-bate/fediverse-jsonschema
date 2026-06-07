@@ -2,38 +2,10 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "schema:mastodon/object",
   "$ref": "schema:as2/object-base",
-  "title": "Object",
+  "title": "Mastodon Object",
   "type": "object",
-  "properties": {
-    "type": {
-      "oneOf": [
-        {
-          "$ref": "#/$defs/types"
-        },
-        {
-          "type": "array",
-          "contains": {
-            "$ref": "#/$defs/types"
-          }
-        }
-      ]
-    }
-  },
-  "$defs": {
-    "types": {
-      "enum": [
-        "Note",
-        "_FIXME_Question",
-        "Article",
-        "Page",
-        "Image",
-        "Audio",
-        "Video",
-        "Event"
-      ]
-    }
-  },
-  "required": [
-    "type"
+  "oneOf": [
+    {"$ref": "schema:mastodon/note"},
+    {"$ref": "schema:mastodon/question"}
   ]
 }

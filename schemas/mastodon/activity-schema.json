@@ -1,71 +1,48 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "schema:mastodon/activity",
-  "$ref": "schema:as2/activity-base",
-  "title": "Activity",
-  "type": "object",
-  "properties": {
-    "type": {
-      "oneOf": [
-        {
-          "$ref": "#/$defs/types"
-        },
-        {
-          "type": "array",
-          "contains": {
-            "$ref": "#/$defs/types"
-          },
-          "maxContains": 1
-        }
-      ]
+  "oneOf": [
+    {
+      "$ref": "schema:mastodon/create"
+    },
+    {
+      "$ref": "schema:mastodon/block"
+    },
+    {
+      "$ref": "schema:mastodon/flag"
+    },
+    {
+      "$ref": "schema:mastodon/move"
+    },
+    {
+      "$ref": "schema:mastodon/accept"
+    },
+    {
+      "$ref": "schema:mastodon/announce"
+    },
+    {
+      "$ref": "schema:mastodon/follow"
+    },
+    {
+      "$ref": "schema:mastodon/like"
+    },
+    {
+      "$ref": "schema:mastodon/update"
+    },
+    {
+      "$ref": "schema:mastodon/undo"
+    },
+    {
+      "$ref": "schema:mastodon/delete"
+    },
+    {
+      "$ref": "schema:mastodon/reject"
+    },
+    {
+      "$ref": "schema:mastodon/add"
+    },
+    {
+      "$ref": "schema:mastodon/remove"
     }
-  },
-  "$defs": {
-    "types": {
-      "anyOf": [
-        {
-          "const": "Accept"
-        },
-        {
-          "const": "Announce"
-        },
-        {
-          "const": "Block"
-        },
-        {
-          "const": "Create"
-        },
-        {
-          "const": "Delete"
-        },
-        {
-          "const": "Flag"
-        },
-        {
-          "const": "Follow"
-        },
-        {
-          "const": "Like"
-        },
-        {
-          "const": "Listen"
-        },
-        {
-          "const": "Move"
-        },
-        {
-          "const": "Reject"
-        },
-        {
-          "const": "Undo"
-        },
-        {
-          "const": "Update"
-        }
-      ]
-    }
-  },
-  "required": [
-    "type"
   ]
 }
